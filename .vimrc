@@ -1,6 +1,9 @@
 " Enable syntax highlighting.
 syntax on
 
+" Line number.
+set number
+
 " Automatically indent when adding a curly bracket, etc.
 set smartindent
 
@@ -14,11 +17,11 @@ set smarttab
 set list
 set listchars=tab:·\ ,trail:· "
 
+" Swap files
+set dir=~/.vim/swp
+
 " On save any: trim trailing whitespace
 autocmd! BufWrite * mark ' | silent! %s/\s\+$// | norm ''
-
-" Minimal number of screen lines to keep above and below the cursor.
-set scrolloff=999
 
 " Use UTF-8.
 set encoding=utf-8
@@ -62,8 +65,14 @@ imap <c-t> <Esc>:tabnew<CR>a
 " Search as you type.
 set incsearch
 
-" Ignore case when searching.
-set ignorecase
+" Highlight all search results.
+set hlsearch
+
+" Clear last search results highlight.
+nmap <F2> :nohlsearch<CR>
+
+" No ignore case when searching.
+set noignorecase
 
 " Show autocomplete menus.
 set wildmenu
