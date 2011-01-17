@@ -1,3 +1,9 @@
+" Make sure that we aren't in VI compatibility mode
+set nocompatible
+
+" Use UTF-8.
+set encoding=utf-8
+
 " Enable syntax highlighting.
 syntax on
 
@@ -13,6 +19,12 @@ set tabstop=4
 set expandtab
 set smarttab
 
+" Configure formatting, in particular enable comment wrapping
+set formatoptions=tcroq
+
+" Enable Backspace usage
+set backspace=indent,eol,start
+
 " Highlight trailing whitespace
 set list
 set listchars=tab:·\ ,trail:· "
@@ -22,9 +34,6 @@ set dir=~/.vim/swp
 
 " On save any: trim trailing whitespace
 autocmd! BufWrite * mark ' | silent! %s/\s\+$// | norm ''
-
-" Use UTF-8.
-set encoding=utf-8
 
 " Disable Input Method as it causes problems with keyboard layout switching
 set imd
