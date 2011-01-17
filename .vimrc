@@ -105,3 +105,5 @@ menu Encoding.cp866 :e ++enc=cp866 ++ff=dos<CR>
 menu Encoding.utf-8 :e ++enc=utf8 <CR>
 menu Encoding.koi8-u :e ++enc=koi8-u ++ff=unix<CR>
 
+" Syntax settings
+au BufNewFile,BufRead *.json set filetype=javascript
